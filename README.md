@@ -2,6 +2,8 @@
 
 Comb is a Windows file search launcher that stays in the system tray and opens instantly with a hotkey.
 
+Comb is in beta (0.2.0 Beta). Some situations have not been tested yet. If something does not work, please report it with your log files (Settings > About > Open log folder) to luis.tjdongin@gmail.com.
+
 ![Search window](docs/images/search.png)
 *The search window: typing "report" lists matching files from several folders; a document with four dated versions is shown as one row.*
 
@@ -22,6 +24,10 @@ Comb provides file name and content search (including PDF, Office documents, and
 - **Preview without opening an app:** press Space (or Ctrl+Y). Supported previews include Word, Excel and PowerPoint files (also older .doc/.xls/.ppt), PDF, images, text and code, Markdown, web pages, email files (.eml/.msg), ZIP archives, fonts, EPUB, Hangul (.hwp/.hwpx), audio and video. Space preview is also available in File Explorer and on the desktop (can be disabled in settings).
 - **Act on a result right away:** open its folder, copy the file or its path, rename (F2), move to the Recycle Bin with undo (Ctrl+Z), or drag and drop files directly from the search results into another app.
 - **Logical search results order:** files are never ranked newer than a date written in their name; files marked as copies ("Copy of...", "... - Copy", Google Drive copies) go below the originals; the same file in different folders (same name and same size) is shown as one row; files in the same folder whose names differ only by a date (for example report_260101.pdf and report_260201.pdf) are shown as one row with the other versions under it.
+- Matching folders also appear in search results, below the files.
+- Files inside a compressed (zipped) folder are marked with a zipper icon and the note "Compressed (zipped) folder".
+- Files on a drive that is not connected (for example an unplugged USB drive or an unavailable network drive) are dimmed and listed below the other files; opening one asks you to connect the drive.
+- If a file was deleted or moved after indexing, Comb says so instead of failing to open it.
 - **Stays in the system tray** and opens instantly with Alt+Space. Optional features (semantic search, OCR, browser history, web suggestions) do nothing until you turn them on.
 - **Works offline.** Searching, indexing, previews, semantic search and OCR all run on your PC.
 - **Open Windows applications and settings.**
@@ -40,10 +46,10 @@ The latest release can always be found here: [Latest Release](https://github.com
 
 ## Installation
 
-Comb installs per-user to `%LOCALAPPDATA%\Programs\Comb` and does not require administrator rights. The installer presents the Terms of Use for agreement and offers an optional desktop shortcut. On its first run, Comb will prompt whether it should start automatically with Windows.
+Comb installs per-user to `%LOCALAPPDATA%\Programs\Comb` and does not require administrator rights. The installer presents the Terms of Use for agreement and offers an optional desktop shortcut. On its first run, Comb will prompt whether it should start automatically with Windows. The first-run guide now lets you try each feature on four sample files that Comb creates for the guide and removes when it ends; it also lets you pick the folders whose document contents Comb searches.
 
 ![First-run guide](docs/images/onboarding.png)
-*A first-run guide card.*
+*First-run guide: try searching by part of a name on sample files.*
 
 **Note on Windows SmartScreen**: The installer is not currently code-signed. During the first manual installation, Windows SmartScreen may display a "Windows protected your PC" warning. To continue, select "More info" and then "Run anyway". Automatic updates do not trigger this warning.
 
@@ -82,7 +88,7 @@ Press `Alt+Space` (default hotkey) to open Comb.
 | `word` | Search for files containing the word |
 | `"exact phrase"` | Search for the exact contiguous phrase |
 | `-word` | Exclude files containing the word |
-| `?pdf`, `?image`, `?doc`, `?sheet`, `?slide`, `?video`, `?audio`, `?zip` | Filter by file type |
+| `?pdf`, `?image`, `?doc`, `?sheet`, `?slide`, `?video`, `?audio`, `?zip`, `?app`, `?folder` | Filter by file type, apps (incl. Windows settings) or folders |
 | `date:today`, `date:yesterday`, `date:this-week`, `date:last-week`, `date:this-month`, `date:last-month`, `date:this-year`, `date:last-year`, `date:YYYY-MM-DD` | Filter by modification date |
 | `size:>10mb`, `size:<1gb` | Filter by file size (supports b, kb, mb, gb, o, ko, mo, go) |
 | `in:Downloads`, `in:Desktop`, `in:Documents`, or arbitrary path names | Filter by folder name |
@@ -178,4 +184,4 @@ For inquiries, contact: luis.tjdongin@gmail.com
 
 ## License
 
-The software license will be announced prior to the public release. The Terms of Use are presented in the installer and remain accessible within Comb's settings under the "About" tab. Third-party open-source licenses are included with the installed application at **Settings > About > Open-source licenses**.
+The software license will be announced prior to the public release. The Terms of Use are presented in the installer and remain accessible within Comb's settings under the "About" tab. The open-source licenses of the components Comb uses can be read in Settings > About (list and full text).
