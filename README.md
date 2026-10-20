@@ -5,6 +5,7 @@ Comb is a Windows file search launcher that stays in the system tray and opens i
 Comb is in beta (0.2.0 Beta). Some situations have not been tested yet. If something does not work, please report it with your log files (Settings > About > Open log folder) to luis.tjdongin@gmail.com.
 
 ![Search window](docs/images/search.png)
+
 *The search window: typing "report" lists matching files from several folders; a document with four dated versions is shown as one row.*
 
 This is the release repository for Comb.
@@ -49,11 +50,13 @@ The latest release can always be found here: [Latest Release](https://github.com
 Comb installs per-user to `%LOCALAPPDATA%\Programs\Comb` and does not require administrator rights. The installer presents the Terms of Use for agreement and offers an optional desktop shortcut. On its first run, Comb will prompt whether it should start automatically with Windows. The first-run guide now lets you try each feature on four sample files that Comb creates for the guide and removes when it ends; it also lets you pick the folders whose document contents Comb searches.
 
 ![First-run guide](docs/images/onboarding.png)
+
 *First-run guide: try searching by part of a name on sample files.*
 
 **Note on Windows SmartScreen**: The installer is not currently code-signed. During the first manual installation, Windows SmartScreen may display a "Windows protected your PC" warning. To continue, select "More info" and then "Run anyway". Automatic updates do not trigger this warning.
 
 ![Settings](docs/images/settings.png)
+
 *Settings, System tab: shortcut, start with Windows, "Install updates automatically", delete confirmation, language.*
 
 ## Getting Started
@@ -79,6 +82,7 @@ Press `Alt+Space` (default hotkey) to open Comb.
 *The search window with the Quick Look preview of a Word document next to it.*
 
 ![Excel spreadsheet preview](docs/images/preview-sheet.png)
+
 *Quick Look preview of an Excel spreadsheet (table, totals row, sheet tabs).*
 
 ### Search Syntax
@@ -95,6 +99,7 @@ Press `Alt+Space` (default hotkey) to open Comb.
 | `C:\` or `~\` | Navigate directories directly |
 
 ![Search filters](docs/images/filters.png)
+
 *Search syntax in use: "report ?pdf date:this-year" shows only this year's PDFs.*
 
 ## Automatic Updates
